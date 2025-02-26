@@ -1,7 +1,7 @@
-CFLAGS = -v -c -ggdb -Wall -ansi -I../src -o $@
+CFLAGS = -v -c -O3 -Wall -ansi -I../src -o $@
 
 STDCPP=stdc++ -lm
-EXECUTABLE = -ggdb -o d-h_test
+EXECUTABLE = -O3 -o d-h_test
 
 d-h_test: main.o flintpp.o flint.o random.o entropy.o aes.o ripemd.o sha1.o randompp.o
 	gcc $(EXECUTABLE) main.o random.o entropy.o aes.o ripemd.o sha1.o randompp.o flintpp.o flint.o -l$(STDCPP)
